@@ -1,7 +1,7 @@
-<hi>Books</h1>
+<hi><%= pluralize(@books.size, 'book') %></h1>
 <p>Available as of <%= formatted_time(@available_at) %></p>
 <ol>
 	<% @books.each do |book| %>
-	<li><%= book %></li>
+	<li><%= book.title %> by <%= book.author %></li>
 	<% end %>
 </ol>
