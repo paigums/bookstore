@@ -19,7 +19,8 @@ before_action :set_book, only: [ :show, :edit, :update, :destroy ]
 	def create
 	    @book = Book.new(book_params)
 	    if @book.save
-	      redirect_to @book
+	    	#redirect_to @book
+	      redirect_to @book, notice: "#{@book.title} was created!"
 	    else
 	      render :new
 	    end
@@ -33,7 +34,8 @@ before_action :set_book, only: [ :show, :edit, :update, :destroy ]
 
 	def update
 	    if @book.update(book_params)
-	      redirect_to @book
+	      #redirect_to @book
+	      redirect_to @book, notice: "#{@book.title} was created!"
 	    else
 	      render :new
 	    end
