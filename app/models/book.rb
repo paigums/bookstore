@@ -9,4 +9,13 @@ validates :pages,
 validates :price, 
     numericality: { greater_than_or_equal_to: 0 },
     if: "price.present?"
+
+
+def average_stars
+  reviews.average(:stars)
 end
+
+end
+
+
+
