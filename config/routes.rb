@@ -1,6 +1,6 @@
 Bookstore::Application.routes.draw do
 
-  resources :reviews
+
 
 #DRYing up the code:
 
@@ -15,6 +15,7 @@ Bookstore::Application.routes.draw do
 #resources :books
 
 resources :books do
+    resources :reviews
     get 'page/:page', :action => :index, :on => :collection
 end
 
@@ -76,3 +77,4 @@ root 'books#index'
   #     resources :products
   #   end
 end
+
