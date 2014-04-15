@@ -1,5 +1,7 @@
 Bookstore::Application.routes.draw do
 
+  resources :reviews
+
 #DRYing up the code:
 
 #get "/books" => "books#index", as: 'books'

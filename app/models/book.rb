@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+	has_many :reviews
 	scope :bargains, -> { where('price < 10.00') }
 	scope :by, ->(author) { where('author = ?', author) }
 	validates :title, :author, :pages, :price, presence: true
