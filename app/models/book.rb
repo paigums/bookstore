@@ -10,10 +10,14 @@ validates :price,
     numericality: { greater_than_or_equal_to: 0 },
     if: "price.present?"
 
+	def average_stars
+	  if reviews.loaded?
+	    reviews.map(&:stars).compact.average
+	  else
+	    reviews.average(:stars)
+	  end
+	end
 
-def average_stars
-  reviews.average(:stars)
-end
 
 end
 
